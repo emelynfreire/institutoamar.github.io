@@ -100,6 +100,8 @@ section {
 		min-width:100%;
 		position:relative;
 		overflow:hidden;
+		background-image: url(https://scontent.fnat1-1.fna.fbcdn.net/v/t1.0-9/53926461_2813232185385237_2377868146183766016_n.jpg?_nc_cat=107&_nc_ht=scontent.fnat1-1.fna&oh=2a4934192017fd7a3df803b76847c30f&oe=5D05CADB); 
+
 }
  
 #sobre:after {
@@ -188,7 +190,7 @@ footer {
 }
 
 .back{ /*configurações do rodape*/
-	background-image:url(https://cdn.shopify.com/s/files/1/1127/3678/products/verde_1024x1024.png?v=1535482543);
+	background-image:url(http://brctecidos.com.br/wp-content/uploads/freshizer/fb3b799a40c826a8a84649774b3cf0a8_Albercan-Vermelho-Escuro-Red-Dark-863-430-c.jpg);
 	font-size: 14px;
 }
 
