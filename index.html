@@ -15,7 +15,12 @@
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
+<stile>
+	.ace{
 
+}
+
+</stile>
 
 </head>
 
@@ -27,38 +32,189 @@
 <div class="container">
 
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html"><img src="imagens/icone.png" height="50px" width="50px"/> INSTITUTO AMAR</a>
+		<a class="navbar-brand" href="index.html" tabindex="1"><img src="imagens/icone.png" alt="foto do logotipo do instituto amar" height="50px" width="50px"/> INSTITUTO AMAR</a>
 	</div>
-<!--
-	<ul class="nav navbar-nav" class="navbar-header">
+
+	<!--<ul class="nav navbar-nav" class="navbar-header">
 			<div class="ace">
-			<li><a  href="#">Acessibilidade</a></li>
-			<li><a  href="#">Alto Contraste</a></li>
-		    <li><a  href="#">VLibras</a></li></div>
-		</ul>
--->
+			<li><a  href="#" tabindex="2">Acessibilidade</a></li>
+			<li><a  href="#" tabindex="3">Alto Contraste</a></li>
+		    <li><a  href="#" tabindex="4">VLibras</a></li></div>
+		</ul> -->
+
 	<!-- Menu -->
 	<ul class="nav navbar-nav navbar-right">
-		    <li><a class="sscroll" href="#inicio">Ínicio</a></li>
-			<li><a class="sscroll" href="#sobre">Sobre</a></li>
-		   
-		<!-- <li><a class="sscroll" href="#galeria">Galeria</a></li>  -->
-			<li><a class="sscroll" href="#facaparte">Faça parte</a></li>
-			<li><a class="sscroll" href="#contato">Contato</a></li>
+		    <li><a class="sscroll" href="#inicio" tabindex="5">Ínicio</a></li>
+			<li><a class="sscroll" href="#sobre" tabindex="6">Sobre</a></li>
+			<li><a class="sscroll" href="#facaparte" tabindex="7">Faça parte</a></li>
+			<li><a class="sscroll" href="#contato" tabindex="8">Contato</a></li>
 		</ul>
 	
 	
 </div>
 </nav>
 
-
 <section id="inicio" class="fullbg">
 <header id="top-section" class="fullbg">
 <div class="jumbotron">
 
+<!-- CODIGO SLIDE SHOW -->
+ <script type="text/javascript" src="slider-master/js/jssor.slider.min.js"></script>
+    <script>
+        jssor_slider1_init = function () {
 
-<img src="imagens/wall.jpg">
-	
+            var options = {
+                $SlideDuration: 800,                    //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $DragOrientation: 3,                    //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
+                $AutoPlay: 1,                           //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
+                $Idle: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+
+                $BulletNavigatorOptions: {              //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,     //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                   //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1,                          //[Optional] Steps to go for each navigation request, default value is 1
+                    $Rows: 1,                           //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                      //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                      //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                     //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,      //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2                    //[Required] 0 Never, 1 Mouse Over, 2 Always
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+            //make sure to clear margin of the slider container element
+            jssor_slider1.$Elmt.style.margin = "";
+
+            //#region responsive code begin
+            //the following code is to place slider in the center of parent container with no scale
+            function ScaleSlider() {
+
+                var containerElement = jssor_slider1.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+                    var expectedWidth = Math.min(containerWidth, jssor_slider1.$OriginalWidth());
+
+                    //scale the slider to original height with no change
+                    jssor_slider1.$ScaleSize(expectedWidth, jssor_slider1.$OriginalHeight());
+
+                    jssor_slider1.$Elmt.style.left = ((containerWidth - expectedWidth) / 2) + "px";
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //#endregion responsive code end
+        };
+
+    </script>
+    
+    <!-- make a div with 100% width, place jssor slider in the div -->
+    <div style="position:absolute;top:0;left:0;width:100%;overflow:hidden; background-image:url(http://www.lovearoma.co.uk/blog/wp-content/uploads/2015/05/bg-red-carpet.jpg);">
+
+        <!--#region Jssor Slider Begin -->
+        <div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 650px;">
+            <!-- Loading Screen -->
+            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;">
+                <img style="margin-top:0;position:relative;top:0;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+            </div>
+
+
+            <!-- Slides Container -->
+            <div data-u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;  height: 650px; overflow: hidden;">
+                <div>
+                    <img data-u="image" src="imagens/1.jpg" alt="foto do logotipo central do insituto amar"  />
+                </div>
+                <div>
+                    <img data-u="image" src="imagens/2.jpg" alt="foto com um compilado de fotos da fachada da frente do instituto com os alunos e funcionarios voluntários do instituto" />
+                </div>
+                <div>
+                    <img data-u="image" src="imagens/3.jpg" alt="crianças no instituto no gramado" />
+                </div>
+                <div>
+                    <img data-u="image" src="imagens/4.jpg" alt="compilado de fotos de alguns projetos desenvolvidos na instituição"/>
+                </div>
+                <div>
+                    <img data-u="image" src="imagens/5.jpg" alt="foto de duas crianças do instituto sorrindo"/>
+                </div>
+                <div>
+                    <img data-u="image" src="imagens/6.jpg" alt="foto de duas crianças do instituto, uma menina brincando com tinta e outra lendo um livro"/>
+                </div>
+                 <div>
+                    <img data-u="image" src="imagens/7.jpg" alt="compilado de fotos de algumas crianças do instituto sorrindo" />
+                </div>
+                 <div>
+                    <img data-u="image" src="imagens/8.jpg" alt="compilado de foto de dois voluntários com as crianças do instituto"/>
+                </div>
+                 <div>
+                    <img data-u="image" src="imagens/9.jpg" alt="compilado de fotos das meninas do instituto numa apresentação de baile"/>
+                </div>
+                 <div>
+                    <img data-u="image" src="imagens/16.jpg" alt="compilado de fotos das crianças do instituto fazendo atividades e sorrindo"/>
+                </div>
+                 
+            </div>
+            
+            <!--#region Bullet Navigator Skin Begin -->
+            <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
+            <style>
+                .jssorb051 .i {position:absolute;cursor:pointer;}
+                .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;stroke:#000;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.5;}
+                .jssorb051 .i:hover .b {fill-opacity:.7;}
+                .jssorb051 .iav .b {fill-opacity: 1;}
+                .jssorb051 .i.idn {opacity:.3;}
+            </style>
+            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+        
+            <!--#region Arrow Navigator Skin Begin -->
+            <!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
+            <style>
+                .jssora051 {display:block;position:absolute;cursor:pointer;}
+                .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+                .jssora051:hover {opacity:.8;}
+                .jssora051.jssora051dn {opacity:.5;}
+                .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+            </style>
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+            <!--#endregion Arrow Navigator Skin End -->
+
+        </div>
+
+        <!-- Trigger -->
+        <script>
+            jssor_slider1_init();
+        </script>
+        <!--#endregion Jssor Slider End -->
+    </div>
+    <!-- FIM CODIGO SLIDE SHOW -->
+
+
 	</div>
 </header>
 </section>
@@ -72,7 +228,7 @@
 <div class="row">
 	<div class="page-header text-center col-sm-12 col-lg-12 color-white animated fade">
 		
-		<img src="imagens/icone.png" height="15%" width="15%">
+		<img src="imagens/icone.png" height="15%" width="15%" alt="foto do logotipo do instituto amar" tabindex="9">
 		<h1>Sobre o Instituto Amar</h1>
 		<p class="lead" align="justify">
 O <b>Instituto de Assistência Social e Educação Amar</b> é uma organização não governamental sem fins lucrativos.
@@ -89,7 +245,7 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 	</div>
 	<center>
 	<h2 id="texto">Localização do Instituto </h2>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508317.0463016896!2d-35.82180543505184!3d-5.533320893897423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2f861d59a4501%3A0xde279babbea2ca1f!2sInstituto+de+Assist%C3%AAncia+Social+e+Educa%C3%A7%C3%A3o+Amar!5e0!3m2!1spt-BR!2sbr!4v1549557202937" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> </center>
+	<iframe tabindex="10"alt ="Localização do instituto pelo google maps"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508317.0463016896!2d-35.82180543505184!3d-5.533320893897423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2f861d59a4501%3A0xde279babbea2ca1f!2sInstituto+de+Assist%C3%AAncia+Social+e+Educa%C3%A7%C3%A3o+Amar!5e0!3m2!1spt-BR!2sbr!4v1549557202937" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> </center>
 </div>
 
 	</div>
@@ -97,61 +253,6 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 <!-- end row -->
 </div>
 </section>
-
-
-<!--  
-Galeria de fotos -->
-
-		<!--
-<section id="galeria" class="fullbg color-white">
-<div class="section-divider">
-</div>
-<div class="container demo-3">
-<div class="row">
-	<div class="page-header text-center col-sm-12 col-lg-12 animated fade">
-		<h1>Galeria de fotos</h1>
-		<p class="lead">
-			Confira a galeria de fotos do Instituto de Educação e Assistência Social Amar
-		</p>
- Copyright (c) 2017 by Karlo Videk (http://codepen.io/karlovidek/pen/reemvP)
-<div class="slider-wrapper">
-  <div class="slider">
-    <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44740256_2490280254347100_61524869644288000_o.jpg?_nc_cat=100&_nc_ht=scontent.fmvf1-1.fna&oh=7ac21cbdea91cf3cbeb6881787dbd624&oe=5CEE19E8)">
-    </div>
-    <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44676699_2490281684346957_6843915882347888640_o.jpg?_nc_cat=108&_nc_ht=scontent.fmvf1-1.fna&oh=7bc005b38a0aee1bb33f35976d71267a&oe=5CF9E7C3)">
-    </div>
-    <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44662656_2490277764347349_49343543528914944_o.jpg?_nc_cat=105&_nc_ht=scontent.fmvf1-1.fna&oh=117d9a481cc6be7559cc7c6c424b501f&oe=5CB2EE91)">
-      
-    </div>
-    <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44789905_2490256837682775_4652800464746708992_o.jpg?_nc_cat=104&_nc_ht=scontent.fmvf1-1.fna&oh=981870cbc663463220d406364ccf8d6c&oe=5CF534F3)">
-    </div>
-      <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44088732_2472776626097463_2213094985752903680_n.jpg?_nc_cat=108&_nc_ht=scontent.fmvf1-1.fna&oh=31f0b97ee3693aa51f575be74b6410f6&oe=5CE00CB6)">
-    </div>
-
-     <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/36121215_2227193037322491_5480834116049960960_n.jpg?_nc_cat=100&_nc_ht=scontent.fmvf1-1.fna&oh=c792497d7bc8d75ef30a5adf72cc31e7&oe=5CDF578E)">
-    </div>
-
-     <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44759265_2490265577681901_258421185698594816_o.jpg?_nc_cat=107&_nc_ht=scontent.fmvf1-1.fna&oh=55b6a06462209ff3916b9434df5fcbe2&oe=5CE87079)">
-    </div>
-
-     <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/46077572_2533777546664037_8453712819374784512_n.jpg?_nc_cat=104&_nc_ht=scontent.fmvf1-1.fna&oh=8c48b415d949aae06ecd7aa20246d41d&oe=5CFCF1FD)">
-    </div>
-
-     <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44701854_2490268417681617_860755469533184000_o.jpg?_nc_cat=111&_nc_ht=scontent.fmvf1-1.fna&oh=630920e4d027aec8b18634fc0f082755&oe=5CFFB02D)">
-    </div>
-
-     <div class="slider--item" style="background-image: url(https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/41518494_2401102856598174_1162608141918011392_n.jpg?_nc_cat=111&_nc_ht=scontent.fmvf1-1.fna&oh=6a2ed155b2f0f493b90edd1926243332&oe=5CB42669)">
-    </div>
-  </div>
-</div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
-
-    <script src="js/index.js"></script>
-<!-- Copyright (c) 2017 by Karlo Videk (http://codepen.io/karlovidek/pen/reemvP) end -->
-
-
 
 
 	</div>
@@ -179,8 +280,7 @@ Galeria de fotos -->
 <div class="row animated fadeInUpNow">
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img src="https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44082455_2472714462770346_7409512158393794560_o.jpg?_nc_cat=106&_nc_ht=scontent.fmvf1-1.fna&oh=7c063f94e446de57ca038702456616ce&oe=5CB83D15" alt="">
-			<img src="" alt="">
+			<img src="imagens/14.jpg" alt="foto de meninas do instituto em uma apresentação de baile">
 			
 			<div class="caption">
 				<center><h4 id="texto-preto">Projetos</h4></center>
@@ -208,9 +308,8 @@ Galeria de fotos -->
 	</div>
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img src="https://scontent.fnat1-1.fna.fbcdn.net/v/t1.0-9/44681557_2490269357681523_6928591209833168896_n.jpg?_nc_cat=106&_nc_ht=scontent.fnat1-1.fna&oh=a617a0db0bd2a8a211e4fc7c91f9d379&oe=5D0FD6CB" alt="">
-			
-			
+			<img src="imagens/15.jpg" alt="foto de uma dentista voluntária com uma criança do instituto">
+
 			<div class="caption">
 				<center><h4 id="texto-preto">Seja voluntário</h4></center>
 				<p>
@@ -230,8 +329,7 @@ Galeria de fotos -->
 	</div>
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img src="https://scontent.fmvf1-1.fna.fbcdn.net/v/t1.0-9/44118583_2472724559436003_4424343887187804160_o.jpg?_nc_cat=101&_nc_ht=scontent.fmvf1-1.fna&oh=fa294111b324b482afc4afd43590b7d0&oe=5CE91082" alt="">
-			<img src="" alt="">
+			<img src="imagens/3.jpg" alt="foto das crianças do instituto na grama">
 
 			<div class="caption">
 				<center><h4 id="texto-preto"> Doações</h4></center>
@@ -277,7 +375,7 @@ Galeria de fotos -->
 <div class="row animated fadeInUpNow">
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img  width="50%" height="50%" src="https://images.vexels.com/media/users/3/141328/isolated/preview/be7f7eb1f18933369cf644f87bc8c74b-telefone-redondo---cone-by-vexels.png" alt="">
+			<img  tabindex="11" width="50%" height="50%" src="https://images.vexels.com/media/users/3/141328/isolated/preview/be7f7eb1f18933369cf644f87bc8c74b-telefone-redondo---cone-by-vexels.png" alt="foto de um desenho de telefone">
 			
 			<div class="caption">
 				<center><h4 id="texto-preto"> Telefone</h4></center>
@@ -289,7 +387,7 @@ Galeria de fotos -->
 	</div>
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img width="50%" height="50%" src="https://janainacampos.com.br/wp-content/uploads/2017/09/Icon_E-mail_Roxo_2.png" alt="">
+			<img width="50%" height="50%" src="https://janainacampos.com.br/wp-content/uploads/2017/09/Icon_E-mail_Roxo_2.png" alt="foto de um desenho de uma carta representando o contato de e-mail" tabindex="12">
 			
 			
 			<div class="caption">
@@ -301,11 +399,11 @@ Galeria de fotos -->
 	</div>
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<img width="75%" height="75%" src="http://www.intermidias.com.br/wp-content/uploads/2018/05/marketingnasredessociais-300x200.png" alt="">
+			<img width="75%" height="75%" src="http://www.intermidias.com.br/wp-content/uploads/2018/05/marketingnasredessociais-300x200.png" alt="foto representando redes sociais do instituto para contato ou saber mais" tabindex="13">
 			<div class="caption">
 				<center><h4 id="texto-preto"> Redes Sociais</h4>
-				<p id="link-amarelo"> Confira nossa página no Facebook:<br> <a href="https://www.facebook.com/Instituto.Amar.RN/"> Clique aqui</a></p>
-				<p id="link-amarelo"> Siga-nos no Instagram: <br><a href="https://www.instagram.com/instituto.amar/">Clique aqui</a></p></center>
+				<p id="link-amarelo"> Confira nossa página no Facebook:<br> <a href="https://www.facebook.com/Instituto.Amar.RN/" tabindex="14"> Clique aqui</a></p>
+				<p id="link-amarelo"> Siga-nos no Instagram: <br><a href="https://www.instagram.com/instituto.amar/" tabindex="15">Clique aqui</a></p></center>
 			</div>
 		</div>
 	</div>
@@ -333,7 +431,7 @@ Galeria de fotos -->
 			INSTITUTO DE ASSISTÊNCIA SOCIAL E EDUCAÇÃO AMAR<br>
 			Endereço: Nova Parnamirim, R. Geraldo Matias, 3 - Parque do Jiqui, Parnamirim - RN, CEP: 59153-200 <br>
 			Telefone: +55 84 98885-7312 | E-mail 1: fatima@insritutoamar.org | Email-2: fatima.mfoca@gmail.com <br>
-		    INSTITUTO AMAR Copyright © 2019 | Desenvolvido por: <a id="desenvolvedora" href="https://github.com/emelynfreire"> Emelyn Freire</a></p> </center>
+		    INSTITUTO AMAR Copyright © 2019 | Desenvolvido por: <a id="desenvolvedora" href="https://github.com/emelynfreire" tabindex="16"> Emelyn Freire</a></p> </center>
 </footer>
 </body>
 
