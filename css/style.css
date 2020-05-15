@@ -111,7 +111,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image: url(https://github.com/emelynfreire/institutoamar.github.io/blob/master/imagens/green.png);
+	background-image: #006400;
 	width:100%;
 	height:100%;
 }
@@ -121,7 +121,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image:url(https://github.com/institutoamar/institutoamar.github.io/blob/master/imagens/red.jpg?raw=true);
+	background-image:#8B0000;
 	width:100%;
 	height:100%;
 }
@@ -134,7 +134,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image:url(https://github.com/institutoamar/institutoamar.github.io/blob/master/imagens/yellow.jpg?raw=true);
+	background-image: #DAA520;
 	width:100%;
 	height:100%;
 	
@@ -146,7 +146,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image:url(https://github.com/institutoamar/institutoamar.github.io/blob/master/imagens/green.png?raw=true);
+	background-image: #006400;
 	width:100%;
 	height:100%;
 	
@@ -158,7 +158,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image:url(https://github.com/institutoamar/institutoamar.github.io/blob/master/imagens/red.jpg?raw=true);
+	background-image: #8B0000;
 	width:100%;
 	height:100%;
 	
