@@ -111,7 +111,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-color: #006400;
+	background: #006400;
 	width:100%;
 	height:100%;
 }
@@ -134,7 +134,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image: #DAA520;
+	background: #DAA520;
 	width:100%;
 	height:100%;
 	
@@ -146,7 +146,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image: #006400;
+	background: #006400;
 	width:100%;
 	height:100%;
 	
@@ -158,7 +158,7 @@ section {
 	position:absolute;
 	top:0;
 	left:0;
-	background-image: #8B0000;
+	background: #8B0000;
 	width:100%;
 	height:100%;
 	
