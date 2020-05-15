@@ -15,13 +15,6 @@
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<stile>
-	.ace{
-
-}
-
-</stile>
-
 </head>
 
 
@@ -44,181 +37,38 @@
 
 	<!-- Menu -->
 	<ul class="nav navbar-nav navbar-right">
-		    <li><a class="sscroll" href="#inicio" tabindex="5">Ínicio</a></li>
-			<li><a class="sscroll" href="#sobre" tabindex="6">Sobre</a></li>
-			<li><a class="sscroll" href="#facaparte" tabindex="7">Faça parte</a></li>
-			<li><a class="sscroll" href="#contato" tabindex="8">Contato</a></li>
+			<li><a class="sscroll" href="#inicio" tabindex="6">Ínicio</a></li>
+            <li><a class="sscroll" href="#sobre" tabindex="7">Sobre</a></li>
+            <li><a class="sscroll" href="#galeria" tabindex="9">Galeria de fotos</a></li>
+            <li><a class="sscroll" href="#facaparte" tabindex="8">Faça parte</a></li>
+			<li><a class="sscroll" href="#contato" tabindex="10">Contato</a></li>
 		</ul>
 	
 	
 </div>
 </nav>
-
+    <!--<center> <img height="90%" width="90%" src="imagens/wall.jpg" alt="foto do logo oficial do Instituto Amar" /></center> -->
+    <!--  INICIO -->
 <section id="inicio" class="fullbg">
-<header id="top-section" class="fullbg">
-<div class="jumbotron">
-
-<!-- CODIGO SLIDE SHOW -->
- <script type="text/javascript" src="slider-master/js/jssor.slider.min.js"></script>
-    <script>
-        jssor_slider1_init = function () {
-
-            var options = {
-                $SlideDuration: 800,                    //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-                $DragOrientation: 3,                    //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
-                $AutoPlay: 1,                           //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
-                $Idle: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-
-                $BulletNavigatorOptions: {              //[Optional] Options to specify and enable navigator or not
-                    $Class: $JssorBulletNavigator$,     //[Required] Class to create navigator instance
-                    $ChanceToShow: 2,                   //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $Steps: 1,                          //[Optional] Steps to go for each navigation request, default value is 1
-                    $Rows: 1,                           //[Optional] Specify lanes to arrange items, default value is 1
-                    $SpacingX: 10,                      //[Optional] Horizontal space between each item in pixel, default value is 0
-                    $SpacingY: 10,                      //[Optional] Vertical space between each item in pixel, default value is 0
-                    $Orientation: 1                     //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
-                },
-
-                $ArrowNavigatorOptions: {
-                    $Class: $JssorArrowNavigator$,      //[Requried] Class to create arrow navigator instance
-                    $ChanceToShow: 2                    //[Required] 0 Never, 1 Mouse Over, 2 Always
-                }
-            };
-
-            var jssor_slider1 = new $JssorSlider$('slider1_container', options);
-            //make sure to clear margin of the slider container element
-            jssor_slider1.$Elmt.style.margin = "";
-
-            //#region responsive code begin
-            //the following code is to place slider in the center of parent container with no scale
-            function ScaleSlider() {
-
-                var containerElement = jssor_slider1.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-                    var expectedWidth = Math.min(containerWidth, jssor_slider1.$OriginalWidth());
-
-                    //scale the slider to original height with no change
-                    jssor_slider1.$ScaleSize(expectedWidth, jssor_slider1.$OriginalHeight());
-
-                    jssor_slider1.$Elmt.style.left = ((containerWidth - expectedWidth) / 2) + "px";
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            //#endregion responsive code end
-        };
-
-    </script>
-    
-    <!-- make a div with 100% width, place jssor slider in the div -->
-    <div style="position:absolute;top:0;left:0;width:100%;overflow:hidden; background-image:url(http://www.lovearoma.co.uk/blog/wp-content/uploads/2015/05/bg-red-carpet.jpg);">
-
-        <!--#region Jssor Slider Begin -->
-        <div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 650px;">
-            <!-- Loading Screen -->
-            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;">
-                <img style="margin-top:0;position:relative;top:0;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
-            </div>
-
-
-            <!-- Slides Container -->
-            <div data-u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;  height: 650px; overflow: hidden;">
-                <div>
-                    <img data-u="image" src="imagens/1.jpg" alt="foto do logotipo central do insituto amar"  />
-                </div>
-                <div>
-                    <img data-u="image" src="imagens/2.jpg" alt="foto com um compilado de fotos da fachada da frente do instituto com os alunos e funcionarios voluntários do instituto" />
-                </div>
-                <div>
-                    <img data-u="image" src="imagens/3.jpg" alt="crianças no instituto no gramado" />
-                </div>
-                <div>
-                    <img data-u="image" src="imagens/4.jpg" alt="compilado de fotos de alguns projetos desenvolvidos na instituição"/>
-                </div>
-                <div>
-                    <img data-u="image" src="imagens/5.jpg" alt="foto de duas crianças do instituto sorrindo"/>
-                </div>
-                <div>
-                    <img data-u="image" src="imagens/6.jpg" alt="foto de duas crianças do instituto, uma menina brincando com tinta e outra lendo um livro"/>
-                </div>
-                 <div>
-                    <img data-u="image" src="imagens/7.jpg" alt="compilado de fotos de algumas crianças do instituto sorrindo" />
-                </div>
-                 <div>
-                    <img data-u="image" src="imagens/8.jpg" alt="compilado de foto de dois voluntários com as crianças do instituto"/>
-                </div>
-                 <div>
-                    <img data-u="image" src="imagens/9.jpg" alt="compilado de fotos das meninas do instituto numa apresentação de baile"/>
-                </div>
-                 <div>
-                    <img data-u="image" src="imagens/16.jpg" alt="compilado de fotos das crianças do instituto fazendo atividades e sorrindo"/>
-                </div>
-                 
-            </div>
-            
-            <!--#region Bullet Navigator Skin Begin -->
-            <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
-            <style>
-                .jssorb051 .i {position:absolute;cursor:pointer;}
-                .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;stroke:#000;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.5;}
-                .jssorb051 .i:hover .b {fill-opacity:.7;}
-                .jssorb051 .iav .b {fill-opacity: 1;}
-                .jssorb051 .i.idn {opacity:.3;}
-            </style>
-            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
-                <div data-u="prototype" class="i" style="width:16px;height:16px;">
-                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
-                    </svg>
-                </div>
-            </div>
-            <!--#endregion Bullet Navigator Skin End -->
+<div class="section-divider">
+</div>
+<div class="container">
+<div class="row">
+    <div class="page-header text-center col-sm-12 col-lg-12 color-white animated fade">
         
-            <!--#region Arrow Navigator Skin Begin -->
-            <!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
-            <style>
-                .jssora051 {display:block;position:absolute;cursor:pointer;}
-                .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
-                .jssora051:hover {opacity:.8;}
-                .jssora051.jssora051dn {opacity:.5;}
-                .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
-            </style>
-            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
-                </svg>
-            </div>
-            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
-                </svg>
-            </div>
-            <!--#endregion Arrow Navigator Skin End -->
-
-        </div>
-
-        <!-- Trigger -->
-        <script>
-            jssor_slider1_init();
-        </script>
-        <!--#endregion Jssor Slider End -->
+        <img src="imagens/icone.png" height="30%" width="30%" alt="foto do logotipo do instituto amar" tabindex="9">
+        <h1>INSTITUTO DE ASSISTÊNCIA SOCIAL E EDUCAÇÃO AMAR</h1>
+        <p> Nova Parnamirim, R. Geraldo Matias, 3 - Parque do Jiqui, Parnamirim - RN, CEP: 59153-200</p>
+        <center>
+        <table>
+                    <tr> <td><center><a href="https://www.facebook.com/Instituto.Amar.RN/"  title="Clique aqui para acessar o site"><img  height="10%" width="10%" src="imagens/iconface.png" title="Clique aqui para acessar o site" alt="">FACEBOOK</a></center></td>    
+                        <td><center> <a href="https://www.instagram.com/instituto.amar/"  title="Clique aqui para acessar o site"><img  height="10%" width="10%" src="imagens/iconinsta.png" title="Clique aqui para acessar o site" alt="">INSTAGRAM</a></center></td></tr>
+                </table >
+            </center>
     </div>
-    <!-- FIM CODIGO SLIDE SHOW -->
-
-
-	</div>
-</header>
+</div>
+</div>
 </section>
-
 
 <!--  SOBRE O INSTITUTO -->
 <section id="sobre" class="fullbg">
@@ -242,10 +92,11 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 <p class="lead" align="justify">
 É importante salientar que essa atuação é embasada e norteada pelo artigo 227 da Constituição Federal de 1988, pela Lei 8.069/90, referente ao Estatuto da Criança e do Adolescente (ECA), e pelo Plano Nacional de Convivência Familiar e Comunitária, visando colaborar diretamente com a efetivação de direitos estabelecidos legalmente, com atividades voltadas para a promoção social e melhoria dos indicadores sociais que demonstram a realidade atual desses indivíduos. 
 		</p>
+
+        <center>
+    <h2>Localização do Instituto </h2>
+    <iframe tabindex="10"alt ="Localização do instituto pelo google maps"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508317.0463016896!2d-35.82180543505184!3d-5.533320893897423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2f861d59a4501%3A0xde279babbea2ca1f!2sInstituto+de+Assist%C3%AAncia+Social+e+Educa%C3%A7%C3%A3o+Amar!5e0!3m2!1spt-BR!2sbr!4v1549557202937" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> </center>
 	</div>
-	<center>
-	<h2 id="texto">Localização do Instituto </h2>
-	<iframe tabindex="10"alt ="Localização do instituto pelo google maps"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508317.0463016896!2d-35.82180543505184!3d-5.533320893897423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2f861d59a4501%3A0xde279babbea2ca1f!2sInstituto+de+Assist%C3%AAncia+Social+e+Educa%C3%A7%C3%A3o+Amar!5e0!3m2!1spt-BR!2sbr!4v1549557202937" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> </center>
 </div>
 
 	</div>
@@ -254,15 +105,53 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 </div>
 </section>
 
+ <!--GALERIA DE FOTOS -->
 
-	</div>
+<section id="galeria" class="fullbg">
+<div class="section-divider">
 </div>
 
-</div>
+<div class="container demo-3">
+<div class="row">
+    <div class="page-header text-center col-sm-12 col-lg-12 animated fade">
+        <h1 id="texto-preto">GALERIA DE FOTOS</h1>
+        <p class="lead" id="texto-preto">
+             <!--texto aqui-->
+        </p>
+                <div>
+                    <img height="90%" width="90%" src="imagens/2.jpg" alt="foto com um compilado de fotos da fachada da frente do instituto com os alunos e funcionarios voluntários do instituto" />
+                </div>
+           
+                <div>
+                    <img height="90%" width="90%" src="imagens/3.jpg" alt="crianças no instituto no gramado" />
+                </div>
+                <div>
+                    <img height="90%" width="90%" src="imagens/4.jpg" alt="compilado de fotos de alguns projetos desenvolvidos na instituição"/>
+                </div>
+                <div>
+                    <img height="90%" width="90%" src="imagens/5.jpg" alt="foto de duas crianças do instituto sorrindo"/>
+                </div>
+                <div>
+                    <img height="90%" width="90%" src="imagens/6.jpg" alt="foto de duas crianças do instituto, uma menina brincando com tinta e outra lendo um livro"/>
+                </div>
+                 <div>
+                    <img height="90%" width="90%" src="imagens/7.jpg" alt="compilado de fotos de algumas crianças do instituto sorrindo" />
+                </div>
+                 <div>
+                    <img height="90%" width="90%" src="imagens/8.jpg" alt="compilado de foto de dois voluntários com as crianças do instituto"/>
+                </div>
+                 <div>
+                    <img height="90%" width="90%" src="imagens/9.jpg" alt="compilado de fotos das meninas do instituto numa apresentação de baile"/>
+                </div>
+                 <div>
+                    <img height="90%" width="90%" src="imagens/16.jpg" alt="compilado de fotos das crianças do instituto fazendo atividades e sorrindo"/>
+                </div>
+                
 
+        
+    </div></div>
+</div>
 </section>
-
- 
 
 <!--faça parte -->
 <section id="facaparte" class="fullbg color-white">
@@ -366,8 +255,8 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 <div class="container demo-3">
 <div class="row">
 	<div class="page-header text-center col-sm-12 col-lg-12 animated fade" >
-		<h1 id="texto-preto" >Contatos</h1>
-		<p class="lead" id="texto-preto">
+		<h1>Contatos</h1>
+		<p class="lead">
 			 Ajude o Instituto Amar a crescer cada vez mais. Sua ajuda é de extrema importância.<br> Entre em contato conosco para saber ou nos conhecer ainda mais.
 		</p>
 	</div>
@@ -407,6 +296,8 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 			</div>
 		</div>
 	</div>
+    <br><br><br>
+    
 </div>
 </div>
 </section>
@@ -430,8 +321,7 @@ Registrada no Conselho Municipal de Assistência Social (CMAS), regularizada pel
 	<center ><p id="texto">
 			INSTITUTO DE ASSISTÊNCIA SOCIAL E EDUCAÇÃO AMAR<br>
 			Endereço: Nova Parnamirim, R. Geraldo Matias, 3 - Parque do Jiqui, Parnamirim - RN, CEP: 59153-200 <br>
-			Telefone: +55 84 98885-7312 | E-mail 1: fatima@insritutoamar.org | Email-2: fatima.mfoca@gmail.com <br>
-		    INSTITUTO AMAR Copyright © 2019 | Desenvolvido por: <a id="desenvolvedora" href="https://github.com/emelynfreire" tabindex="16"> Emelyn Freire</a></p> </center>
+		    INSTITUTO AMAR Copyright © 2020 | Desenvolvido por: <a id="desenvolvedora" href="https://emelynfreire.github.io/" tabindex="16"> Emelyn Freire</a></p> </center>
 </footer>
 </body>
 
